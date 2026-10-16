@@ -20,7 +20,11 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
     col = vec3(tan((d * 100.0) + 20.0 * iTime), cos((d * 100.0) + 25.0 * iTime), sin((d * 100.0) + 30.0 * iTime));
 
-    bump = mod(iTime, 2.0) == 0.0 ? 0.2 : 0
+    float bump;
+
+    bump = mod(iTime, 2.0) < 0.7 ? 0.5 : 0.0;
+
+    col = col + bump;
 
 /*
     if (d > 0.5 && d < 0.6){

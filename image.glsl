@@ -16,11 +16,13 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         float mapd = (d - 0.5) * 10.5;
         col = vec3(mapd, mapd, mapd);
     }
-    float bump = 0.0;
-    bump = hash(iTime) > 0.5 ? 1.0 : 0.0;
-    col = (bump, bump, bump);
+
 
     col = vec3(tan((d * 100.0) + 20.0 * iTime), cos((d * 100.0) + 25.0 * iTime), sin((d * 100.0) + 30.0 * iTime));
+
+    float bump = 0.0;
+    bump = hash(floor(iTime * 2.0)) > 0.5 ? 1.0 : 0.0;
+    col = col + bump;
 
 /*
     if (d > 0.5 && d < 0.6){

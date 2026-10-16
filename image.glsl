@@ -14,7 +14,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         col = vec3(mapd, mapd, mapd);
     }
 
-    col = vec3(sin((d * 100.0) + 2.0 * iTime), sin((d * 100.0) + 2.5 * iTime), sin((d * 100.0) + 3.0 * iTime));
+    col = vec3(sin((d * 100.0) + 20.0 * iTime), sin((d * 100.0) + 25.0 * iTime), sin((d * 100.0) + 30.0 * iTime));
 
 
 /*
@@ -26,4 +26,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
 
     fragColor = vec4(col, 1.0);
+}
+
+float hash(vec2 p) {
+    return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
 }

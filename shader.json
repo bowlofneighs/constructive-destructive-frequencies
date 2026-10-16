@@ -15,7 +15,7 @@
           "channel": 0
         }
       ],
-      "code": "// Welcome! This is a Shadertoy-style shader.\n// mainImage runs once for each pixel, every frame.\n// Try changing a number, then watch the preview on the right.\n\nvoid mainImage( out vec4 fragColor, in vec2 fragCoord )\n{\n    // Pixel position, from 0 to 1 across the screen.\n    vec2 uv = (fragCoord - 0.5 * iResolution.xy) / iResolution.y;\n    float d = length(uv);\n    vec3 col;\n    if (d > 0.5){\n         col = vec3(1.0, 1.0, 1.0);\n    }\n    if (0.6 < d && d < 0.5){\n        col = vec3(d, d, d);\n    }\n\n\n    fragColor = vec4(col, 1.0);\n}\n",
+      "code": "// Welcome! This is a Shadertoy-style shader.\n// mainImage runs once for each pixel, every frame.\n// Try changing a number, then watch the preview on the right.\n\nvoid mainImage( out vec4 fragColor, in vec2 fragCoord )\n{\n    // Pixel position, from 0 to 1 across the screen.\n    vec2 uv = (fragCoord - 0.5 * iResolution.xy) / iResolution.y;\n    float d = length(uv);\n    vec3 col;\n    if (d > 0.5){\n         col = vec3(1.0, 1.0, 1.0);\n    }\n    if (0.6 > d && d > 0.5){\n        col = vec3(1.0 * 2.0 *d, 2.0 * d, 1.0 * 2.0 * d);\n    }\n\n\n    fragColor = vec4(col, 1.0);\n}\n",
       "name": "Image",
       "description": "",
       "type": "image"

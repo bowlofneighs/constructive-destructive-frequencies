@@ -10,8 +10,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
          col = vec3(1.0, 1.0, 1.0); // if the distance from the center is less than 0.5, the color is white
     }
     if (0.6 > d && d > 0.5){ //if the distance from center is between 0.5 and 0.6
-        mapd = map()
-        col = vec3(d, d, d);
+        float mapd = (d - 0.5) * 10.5;
+        col = vec3(mapd, mapd, mapd);
     }
 
 

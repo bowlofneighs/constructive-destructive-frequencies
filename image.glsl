@@ -14,8 +14,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         col = vec3(mapd, mapd, mapd);
     }
 
-    col = vec3(sin((d * 100.0) + 20.0 * iTime), sin((d * 100.0) + 25.0 * iTime), sin((d * 100.0) + 30.0 * iTime));
-
+    col = vec3(sin((d * 100.0) + 20.0 * iTime), sin((d * 100.0) + 25.0 * hash(iTime)), sin((d * 100.0) + 30.0 * iTime));
 
 /*
     if (d > 0.5 && d < 0.6){

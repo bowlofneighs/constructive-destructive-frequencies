@@ -5,8 +5,11 @@
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
     // Pixel position, from 0 to 1 across the screen.
-    vec2 uv = fragCoord / iResolution.xy;
-    if uv >
+    vec2 uv = (fragCoord - 0.5 * iResolution.xy) / iResolution.y;
+    float d = length(uv);
+    if (d > 1){
+        vec3 col = vec3(1.0, 1.0, 1.0);
+    }
 
 
     fragColor = vec4(col, 1.0);

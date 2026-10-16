@@ -2,8 +2,8 @@
   "ver": "0.1",
   "info": {
     "id": "",
-    "name": "",
-    "description": "",
+    "name": "constructive/destructive frequencies",
+    "description": "this makes my walls move towards me",
     "tags": []
   },
   "renderpass": [

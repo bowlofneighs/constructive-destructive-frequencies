@@ -15,7 +15,7 @@
           "channel": 0
         }
       ],
-      "code": "\nvoid mainImage( out vec4 fragColor, in vec2 fragCoord )\n{\n\n    vec2 uv = (fragCoord - 0.5 * iResolution.xy) / iResolution.y; // makes the screen left right -1 - +1 and up down +1 - -1\n    float d = length(uv);\n\n    vec3 col;\n    if (d > 0.5){\n         col = vec3(1.0, 1.0, 1.0); // if the distance from the center is less than 0.5, the color is white\n    }\n    if (0.6 > d && d > 0.5){ //if the distance from center is between 0.5 and 0.6\n        float mapd = (d - 0.5) * 10.5;\n        col = vec3(mapd, mapd, mapd);\n    }\n\n    col = vec3(frac(d), col.y, col.z);\n\n\n/*\n    if (d > 0.5 && d < 0.6){\n        fragColor = vec4(1, 1, 1, 1);\n    }\n*/\n    //fragColor = vec4(vec3(d), 1.0);\n\n\n    fragColor = vec4(col, 1.0);\n}\n",
+      "code": "\nvoid mainImage( out vec4 fragColor, in vec2 fragCoord )\n{\n\n    vec2 uv = (fragCoord - 0.5 * iResolution.xy) / iResolution.y; // makes the screen left right -1 - +1 and up down +1 - -1\n    float d = length(uv);\n\n    vec3 col;\n    if (d > 0.5){\n         col = vec3(1.0, 1.0, 1.0); // if the distance from the center is less than 0.5, the color is white\n    }\n    if (0.6 > d && d > 0.5){ //if the distance from center is between 0.5 and 0.6\n        float mapd = (d - 0.5) * 10.5;\n        col = vec3(mapd, mapd, mapd);\n    }\n\n    col = vec3(sin(d * 100.0), sin(d * 100.0 + 100.0), col.z);\n\n\n/*\n    if (d > 0.5 && d < 0.6){\n        fragColor = vec4(1, 1, 1, 1);\n    }\n*/\n    //fragColor = vec4(vec3(d), 1.0);\n\n\n    fragColor = vec4(col, 1.0);\n}\n",
       "name": "Image",
       "description": "",
       "type": "image"

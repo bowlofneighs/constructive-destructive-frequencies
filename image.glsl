@@ -14,6 +14,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         col = vec3(mapd, mapd, mapd);
     }
 
+    col = vec3(frac(d), col.y, col.z);
+
 
 /*
     if (d > 0.5 && d < 0.6){

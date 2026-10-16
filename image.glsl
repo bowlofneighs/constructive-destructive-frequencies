@@ -13,6 +13,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         float mapd = (d - 0.5) * 10.5;
         col = vec3(mapd, mapd, mapd);
     }
+    hash(iTime) > 0.5 : col = vec3(col.x + 0.2, col.y + 0.2, col.z + 0.2) ? col = col;
 
     col = vec3(tan((d * 100.0) + 20.0 * iTime), cos((d * 100.0) + 25.0 * iTime), sin((d * 100.0) + 30.0 * iTime));
 

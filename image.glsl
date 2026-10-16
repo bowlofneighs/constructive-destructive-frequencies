@@ -2,6 +2,13 @@
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
 
+    float hash(vec2 p) {
+        return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
+    }
+float hash(float p) {
+    return fract(sin(p * 12.9898) * 43758.5453);
+}
+
     vec2 uv = (fragCoord - 0.5 * iResolution.xy) / iResolution.y; // makes the screen left right -1 - +1 and up down +1 - -1
     float d = length(uv);
 
@@ -27,6 +34,4 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     fragColor = vec4(col, 1.0);
 }
 
-float hash(vec2 p) {
-    return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
-}
+

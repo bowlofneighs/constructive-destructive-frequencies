@@ -17,8 +17,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         col = vec3(mapd, mapd, mapd);
     }
     float bump = 0.0;
-    hash(iTime) > 0.5 ? bump = 0.2 : bump = 0.0;
-    col = col+bump;
+    bump = hash(iTime) > 0.5 ? 1.0 : 0.0;
+    col = (bump, bump, bump);
 
     col = vec3(tan((d * 100.0) + 20.0 * iTime), cos((d * 100.0) + 25.0 * iTime), sin((d * 100.0) + 30.0 * iTime));
 

@@ -22,7 +22,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
     float bump;
 
-    bump = mod(iTime, 2.0) < 0.7 ? 0.5 : 0.0;
+    bump = mod(iTime, 2.0) < 1.0 ? 0.5 : 0.0;
 
     col = col + bump;
 
